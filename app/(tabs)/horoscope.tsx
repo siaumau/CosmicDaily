@@ -8,30 +8,30 @@ import Button from '../../components/Button';
 export default function HoroscopeScreen() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedCategory, setSelectedCategory] = useState('all');
-  
+
   const formatDate = (date: Date) => {
     const options: Intl.DateTimeFormatOptions = {
       weekday: 'long',
       month: 'long',
       day: 'numeric',
     };
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString('zh-TW', options);
   };
-  
+
   const changeDate = (days: number) => {
     const newDate = new Date(selectedDate);
     newDate.setDate(newDate.getDate() + days);
     setSelectedDate(newDate);
   };
-  
+
   const categories = [
-    { id: 'all', name: 'All' },
-    { id: 'love', name: 'Love' },
-    { id: 'career', name: 'Career' },
-    { id: 'health', name: 'Health' },
-    { id: 'money', name: 'Money' },
+    { id: 'all', name: '整體運勢' },
+    { id: 'love', name: '愛情運' },
+    { id: 'career', name: '事業運' },
+    { id: 'health', name: '健康運' },
+    { id: 'money', name: '財運' },
   ];
-  
+
   const renderRatingStars = (rating: number) => {
     return (
       <View style={styles.ratingContainer}>
@@ -49,17 +49,17 @@ export default function HoroscopeScreen() {
       </View>
     );
   };
-  
+
   return (
     <GradientBackground>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Text style={styles.title}>Daily Horoscope</Text>
+          <Text style={styles.title}>每日運勢</Text>
           <TouchableOpacity style={styles.iconButton}>
             <Bell size={20} color="#BB86FC" />
           </TouchableOpacity>
         </View>
-        
+
         <View style={styles.dateSelector}>
           <TouchableOpacity onPress={() => changeDate(-1)}>
             <ChevronLeft size={24} color="#BB86FC" />
@@ -72,7 +72,7 @@ export default function HoroscopeScreen() {
             <ChevronRight size={24} color="#BB86FC" />
           </TouchableOpacity>
         </View>
-        
+
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -98,105 +98,105 @@ export default function HoroscopeScreen() {
             </TouchableOpacity>
           ))}
         </ScrollView>
-        
+
         <Card style={styles.summaryCard} gradient>
-          <Text style={styles.summaryTitle}>Today's Cosmic Weather</Text>
+          <Text style={styles.summaryTitle}>今日星象概況</Text>
           <View style={styles.divider} />
-          
+
           <View style={styles.ratingRow}>
-            <Text style={styles.ratingLabel}>Overall</Text>
+            <Text style={styles.ratingLabel}>整體運勢</Text>
             {renderRatingStars(4)}
           </View>
-          
+
           <View style={styles.ratingRow}>
-            <Text style={styles.ratingLabel}>Love</Text>
+            <Text style={styles.ratingLabel}>愛情運勢</Text>
             {renderRatingStars(3)}
           </View>
-          
+
           <View style={styles.ratingRow}>
-            <Text style={styles.ratingLabel}>Career</Text>
+            <Text style={styles.ratingLabel}>事業運勢</Text>
             {renderRatingStars(5)}
           </View>
-          
+
           <View style={styles.ratingRow}>
-            <Text style={styles.ratingLabel}>Health</Text>
+            <Text style={styles.ratingLabel}>健康運勢</Text>
             {renderRatingStars(4)}
           </View>
-          
+
           <View style={styles.ratingRow}>
-            <Text style={styles.ratingLabel}>Money</Text>
+            <Text style={styles.ratingLabel}>財運運勢</Text>
             {renderRatingStars(3)}
           </View>
         </Card>
-        
+
         <Card style={styles.horoscopeCard}>
-          <Text style={styles.horoscopeTitle}>Leo Daily Horoscope</Text>
-          <Text style={styles.horoscopeDate}>July 23 - August 22</Text>
-          
+          <Text style={styles.horoscopeTitle}>獅子座每日運勢</Text>
+          <Text style={styles.horoscopeDate}>7月23日 - 8月22日</Text>
+
           <Text style={styles.horoscopeParagraph}>
-            Today's planetary alignment brings a surge of creative energy and leadership opportunities your way, Leo. The Sun, your ruling planet, forms a harmonious trine with Jupiter, expanding your influence and visibility in professional settings.
+            今天的星象排列為你帶來創造力和領導機會的能量，獅子座。你的守護星太陽與木星形成和諧相位，擴大你在職場上的影響力和能見度。
           </Text>
-          
+
           <Text style={styles.horoscopeParagraph}>
-            This is an excellent day to showcase your talents, pitch ideas, or take the initiative on projects that matter to you. Your natural charisma is enhanced, making it easier to win others to your cause.
+            這是展示才能、提出想法或在重要項目中主動出擊的絕佳時機。你的天然魅力得到增強，更容易說服他人支持你的理念。
           </Text>
-          
+
           <Text style={styles.horoscopeParagraph}>
-            In your personal relationships, express your feelings generously but be mindful of dominating conversations. The Moon in Pisces softens your approach, allowing for deeper emotional connections if you remain receptive to others' needs.
+            在人際關係方面，慷慨地表達你的感受，但要注意不要主導對話。雙魚座的月亮柔化了你的表達方式，如果你能保持開放和接納的態度，將有助於建立更深層的情感連結。
           </Text>
-          
+
           <Text style={styles.horoscopeParagraph}>
-            Health-wise, focus on activities that strengthen your heart and spine. A moderate workout that gets your blood pumping would be beneficial today.
+            在健康方面，建議關注強化心臟和脊椎的活動。今天進行適度的有氧運動會特別有益。
           </Text>
         </Card>
-        
+
         <Card style={styles.planetaryCard}>
-          <Text style={styles.planetaryTitle}>Key Planetary Influences</Text>
-          
+          <Text style={styles.planetaryTitle}>重要星象影響</Text>
+
           <View style={styles.planetaryItem}>
             <View style={styles.planetSymbolContainer}>
               <Text style={styles.planetSymbol}>☉</Text>
             </View>
             <View style={styles.planetaryContent}>
-              <Text style={styles.planetaryName}>Sun in Leo</Text>
+              <Text style={styles.planetaryName}>太陽在獅子座</Text>
               <Text style={styles.planetaryDescription}>
-                Boosts your confidence and creative expression
+                提升你的自信心和創造力表現
               </Text>
             </View>
           </View>
-          
+
           <View style={styles.planetaryItem}>
             <View style={styles.planetSymbolContainer}>
               <Text style={styles.planetSymbol}>☿</Text>
             </View>
             <View style={styles.planetaryContent}>
-              <Text style={styles.planetaryName}>Mercury in Virgo</Text>
+              <Text style={styles.planetaryName}>水星在處女座</Text>
               <Text style={styles.planetaryDescription}>
-                Sharpens your analytical thinking and communication
+                增強你的分析思維和溝通能力
               </Text>
             </View>
           </View>
-          
+
           <View style={styles.planetaryItem}>
             <View style={styles.planetSymbolContainer}>
               <Text style={styles.planetSymbol}>☽</Text>
             </View>
             <View style={styles.planetaryContent}>
-              <Text style={styles.planetaryName}>Moon in Pisces</Text>
+              <Text style={styles.planetaryName}>月亮在雙魚座</Text>
               <Text style={styles.planetaryDescription}>
-                Heightens your intuition and emotional sensitivity
+                提高你的直覺力和情感敏感度
               </Text>
             </View>
           </View>
         </Card>
-        
+
         <Card style={styles.adviceCard}>
-          <Text style={styles.adviceTitle}>Today's Advice</Text>
+          <Text style={styles.adviceTitle}>今日建議</Text>
           <Text style={styles.adviceText}>
-            Lead with your heart today, Leo. Your natural warmth and generosity will open doors and strengthen bonds. Take time to appreciate beauty in your surroundings and express gratitude for the abundance in your life.
+            今天要用心帶領，獅子座。你天生的溫暖和慷慨會為你開啟大門並加強人際關係。花時間欣賞周圍的美好，並對生活中的豐盛心存感激。
           </Text>
           <Button
-            title="Get Personalized Reading"
+            title="獲取個人運勢解讀"
             onPress={() => {}}
             style={styles.adviceButton}
           />

@@ -10,19 +10,19 @@ import HoroscopeCard from '../../components/HoroscopeCard';
 
 export default function HomeScreen() {
   const router = useRouter();
-  const [currentProfile, setCurrentProfile] = useState('My Chart');
-  
+  const [currentProfile, setCurrentProfile] = useState('我的星盤');
+
   const profiles = [
-    { name: 'My Chart', date: 'May 15, 1990' },
-    { name: 'Partner', date: 'Oct 23, 1988' },
-    { name: 'Friend', date: 'Jan 5, 1992' },
+    { name: '我的星盤', date: '1990年5月15日' },
+    { name: '伴侶', date: '1988年10月23日' },
+    { name: '朋友', date: '1992年1月5日' },
   ];
-  
+
   return (
     <GradientBackground>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Text style={styles.title}>Cosmic Insights</Text>
+          <Text style={styles.title}>星座占卜</Text>
           <TouchableOpacity style={styles.profileButton}>
             <Image
               source={{ uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' }}
@@ -30,44 +30,44 @@ export default function HomeScreen() {
             />
           </TouchableOpacity>
         </View>
-        
+
         <Card style={styles.todayCard} gradient>
           <View style={styles.todayHeader}>
             <View>
-              <Text style={styles.todayTitle}>Today's Cosmic Energy</Text>
-              <Text style={styles.todayDate}>June 15, 2025</Text>
+              <Text style={styles.todayTitle}>今日宇宙能量</Text>
+              <Text style={styles.todayDate}>2025年6月15日</Text>
             </View>
             <Calendar color="#BB86FC" size={24} />
           </View>
-          
+
           <View style={styles.divider} />
-          
+
           <View style={styles.planetaryEvent}>
             <Sparkles color="#03DAC6" size={20} />
             <Text style={styles.eventText}>
-              <Text style={styles.eventHighlight}>Mercury</Text> enters{' '}
-              <Text style={styles.eventHighlight}>Gemini</Text> - Communication flows easily
+              <Text style={styles.eventHighlight}>水星</Text> 進入{' '}
+              <Text style={styles.eventHighlight}>雙子座</Text> - 溝通順暢
             </Text>
           </View>
-          
+
           <View style={styles.planetaryEvent}>
             <Sparkles color="#BB86FC" size={20} />
             <Text style={styles.eventText}>
-              <Text style={styles.eventHighlight}>Full Moon</Text> in{' '}
-              <Text style={styles.eventHighlight}>Sagittarius</Text> - Seek truth and adventure
+              <Text style={styles.eventHighlight}>滿月</Text> 在{' '}
+              <Text style={styles.eventHighlight}>射手座</Text> - 尋求真理與冒險
             </Text>
           </View>
-          
+
           <Button
-            title="View Full Daily Forecast"
+            title="查看完整每日運勢"
             onPress={() => router.push('/(tabs)/horoscope')}
             variant="outline"
             style={styles.todayButton}
           />
         </Card>
-        
+
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Your Birth Chart</Text>
+          <Text style={styles.sectionTitle}>你的本命星盤</Text>
           <View style={styles.profileSelector}>
             {profiles.map((profile) => (
               <TouchableOpacity
@@ -90,96 +90,96 @@ export default function HomeScreen() {
             ))}
           </View>
         </View>
-        
+
         <Card style={styles.chartCard}>
           <AstrologyChart simplified />
           <Button
-            title="View Full Birth Chart"
+            title="查看完整星盤"
             onPress={() => router.push('/(tabs)/natal-chart')}
             icon={<Star size={16} color="#fff" />}
             style={styles.chartButton}
           />
         </Card>
-        
+
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Daily Horoscope</Text>
+          <Text style={styles.sectionTitle}>每日運勢</Text>
           <TouchableOpacity
             style={styles.viewAllButton}
             onPress={() => router.push('/(tabs)/horoscope')}
           >
-            <Text style={styles.viewAllText}>View All</Text>
+            <Text style={styles.viewAllText}>查看全部</Text>
             <ChevronRight size={16} color="#BB86FC" />
           </TouchableOpacity>
         </View>
-        
+
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.horoscopeScroll}
         >
           <HoroscopeCard
-            sign="Leo"
-            date="Jul 23 - Aug 22"
-            description="Today brings creative energy and leadership opportunities. Express yourself boldly and take initiative in projects that matter to you."
+            sign="獅子座"
+            date="7月23日 - 8月22日"
+            description="今天帶來創造力和領導機會。大膽表達自己，在重要項目中主動出擊。"
             rating={4}
             imageUrl="https://images.unsplash.com/photo-1534375971785-5c1826f739d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
             onPress={() => {}}
           />
-          
+
           <HoroscopeCard
-            sign="Virgo"
-            date="Aug 23 - Sep 22"
-            description="Focus on organization and self-care today. Your attention to detail will be appreciated by colleagues and loved ones."
+            sign="處女座"
+            date="8月23日 - 9月22日"
+            description="今天注重組織和自我照顧。你的細心會得到同事和親人的讚賞。"
             rating={3}
             imageUrl="https://images.unsplash.com/photo-1572506745854-5a8a2c8c17b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
             onPress={() => {}}
           />
         </ScrollView>
-        
+
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Learn Astrology</Text>
+          <Text style={styles.sectionTitle}>學習占星</Text>
           <TouchableOpacity
             style={styles.viewAllButton}
             onPress={() => router.push('/(tabs)/learn')}
           >
-            <Text style={styles.viewAllText}>View All</Text>
+            <Text style={styles.viewAllText}>查看全部</Text>
             <ChevronRight size={16} color="#BB86FC" />
           </TouchableOpacity>
         </View>
-        
+
         <View style={styles.learningCards}>
           <TouchableOpacity
             style={[styles.learningCard, styles.learningCardLeft]}
             onPress={() => router.push('/(tabs)/learn')}
           >
-            <Text style={styles.learningCardTitle}>Planets</Text>
-            <Text style={styles.learningCardSubtitle}>Cosmic influences</Text>
+            <Text style={styles.learningCardTitle}>行星</Text>
+            <Text style={styles.learningCardSubtitle}>宇宙影響力</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity
             style={[styles.learningCard, styles.learningCardRight]}
             onPress={() => router.push('/(tabs)/learn')}
           >
-            <Text style={styles.learningCardTitle}>Houses</Text>
-            <Text style={styles.learningCardSubtitle}>Life areas</Text>
+            <Text style={styles.learningCardTitle}>宮位</Text>
+            <Text style={styles.learningCardSubtitle}>人生領域</Text>
           </TouchableOpacity>
         </View>
-        
+
         <View style={styles.learningCards}>
           <TouchableOpacity
             style={[styles.learningCard, styles.learningCardLeft]}
             onPress={() => router.push('/(tabs)/learn')}
           >
-            <Text style={styles.learningCardTitle}>Aspects</Text>
-            <Text style={styles.learningCardSubtitle}>Planetary relationships</Text>
+            <Text style={styles.learningCardTitle}>相位</Text>
+            <Text style={styles.learningCardSubtitle}>行星關係</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity
             style={[styles.learningCard, styles.learningCardRight]}
             onPress={() => router.push('/(tabs)/learn')}
           >
-            <Text style={styles.learningCardTitle}>Transits</Text>
-            <Text style={styles.learningCardSubtitle}>Current influences</Text>
+            <Text style={styles.learningCardTitle}>運行</Text>
+            <Text style={styles.learningCardSubtitle}>當前影響</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

@@ -11,141 +11,141 @@ export default function CompatibilityScreen() {
   const [person1Date, setPerson1Date] = useState(new Date(1990, 4, 15));
   const [person2Date, setPerson2Date] = useState(new Date(1992, 9, 23));
   const [showDatePicker, setShowDatePicker] = useState(false);
-  
+
   return (
     <GradientBackground>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Text style={styles.title}>Compatibility</Text>
+          <Text style={styles.title}>合盤分析</Text>
         </View>
-        
+
         <View style={styles.profilesContainer}>
           <View style={styles.profileCard}>
             <Image
               source={{ uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' }}
               style={styles.profileImage}
             />
-            <Text style={styles.profileName}>You</Text>
-            <Text style={styles.profileSign}>Leo</Text>
+            <Text style={styles.profileName}>你</Text>
+            <Text style={styles.profileSign}>獅子座</Text>
             <TouchableOpacity
               style={styles.dateButton}
               onPress={() => setShowDatePicker(true)}
             >
-              <Text style={styles.dateButtonText}>May 15, 1990</Text>
+              <Text style={styles.dateButtonText}>1990年5月15日</Text>
               <ChevronDown size={16} color="#BB86FC" />
             </TouchableOpacity>
           </View>
-          
+
           <View style={styles.heartContainer}>
             <Heart size={32} color="#BB86FC" />
           </View>
-          
+
           <View style={styles.profileCard}>
             <Image
               source={{ uri: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' }}
               style={styles.profileImage}
             />
-            <Text style={styles.profileName}>Partner</Text>
-            <Text style={styles.profileSign}>Scorpio</Text>
+            <Text style={styles.profileName}>伴侶</Text>
+            <Text style={styles.profileSign}>天蠍座</Text>
             <TouchableOpacity
               style={styles.dateButton}
               onPress={() => setShowDatePicker(true)}
             >
-              <Text style={styles.dateButtonText}>Oct 23, 1992</Text>
+              <Text style={styles.dateButtonText}>1992年10月23日</Text>
               <ChevronDown size={16} color="#BB86FC" />
             </TouchableOpacity>
           </View>
         </View>
-        
+
         <Card style={styles.scoreCard} gradient>
-          <Text style={styles.scoreTitle}>Overall Compatibility</Text>
+          <Text style={styles.scoreTitle}>整體匹配度</Text>
           <View style={styles.scoreCircle}>
             <Text style={styles.scoreValue}>78%</Text>
           </View>
           <Text style={styles.scoreDescription}>
-            Your connection has strong potential with some challenges to navigate
+            你們的連結具有強大潛力，但需要克服一些挑戰
           </Text>
         </Card>
-        
+
         <Card style={styles.detailsCard}>
-          <Text style={styles.detailsTitle}>Compatibility Details</Text>
-          
-          <CompatibilityMeter percentage={85} label="Romance & Passion" />
-          <CompatibilityMeter percentage={72} label="Communication" />
-          <CompatibilityMeter percentage={65} label="Trust & Loyalty" />
-          <CompatibilityMeter percentage={90} label="Shared Values" />
-          <CompatibilityMeter percentage={78} label="Long-term Potential" />
+          <Text style={styles.detailsTitle}>匹配度詳情</Text>
+
+          <CompatibilityMeter percentage={85} label="浪漫與激情" />
+          <CompatibilityMeter percentage={72} label="溝通交流" />
+          <CompatibilityMeter percentage={65} label="信任與忠誠" />
+          <CompatibilityMeter percentage={90} label="共同價值觀" />
+          <CompatibilityMeter percentage={78} label="長期發展潛力" />
         </Card>
-        
+
         <Card style={styles.analysisCard}>
-          <Text style={styles.analysisTitle}>Relationship Analysis</Text>
-          
+          <Text style={styles.analysisTitle}>關係分析</Text>
+
           <Text style={styles.analysisParagraph}>
-            Leo and Scorpio create a passionate and intense relationship. Your Leo sun brings warmth, creativity, and a desire for admiration, while your partner's Scorpio energy adds depth, intensity, and emotional intelligence.
+            獅子座和天蠍座會創造出充滿激情和強烈的關係。你的獅子座太陽帶來溫暖、創造力和渴望被欣賞的特質，而你伴侶的天蠍座能量則增添深度、強度和情感智慧。
           </Text>
-          
+
           <Text style={styles.analysisParagraph}>
-            The strongest aspect of your connection is the magnetic attraction and passionate energy between you. Both signs are fixed in nature, creating a strong bond once established. Your Leo generosity complements Scorpio's loyalty, forming a foundation of mutual respect.
+            你們關係最強大的特點是彼此之間的磁性吸引和熱情能量。兩個星座都屬於固定星座，一旦建立關係就會形成牢固的紐帶。你的獅子座慷慨與天蠍座的忠誠相輔相成，形成互相尊重的基礎。
           </Text>
-          
+
           <Text style={styles.analysisParagraph}>
-            Challenges may arise from Leo's need for attention conflicting with Scorpio's private nature. Leo's straightforward approach might clash with Scorpio's more strategic and sometimes secretive communication style. Working on transparency and respecting each other's emotional needs will be key.
+            挑戰可能來自於獅子座對關注的需求與天蠍座較為私密的性格之間的衝突。獅子座直接的處事方式可能與天蠍座更具策略性且有時保密的溝通方式產生摩擦。保持透明度並尊重彼此的情感需求將是關鍵。
           </Text>
-          
-          <Text style={styles.analysisSubtitle}>Key Planetary Connections</Text>
-          
+
+          <Text style={styles.analysisSubtitle}>重要行星連結</Text>
+
           <View style={styles.aspectItem}>
             <View style={styles.aspectSymbolContainer}>
               <Text style={styles.aspectSymbol}>☉ ▵ ☽</Text>
             </View>
             <View style={styles.aspectContent}>
-              <Text style={styles.aspectName}>Your Sun trine Partner's Moon</Text>
+              <Text style={styles.aspectName}>你的太陽三分伴侶的月亮</Text>
               <Text style={styles.aspectDescription}>
-                Creates natural emotional harmony and mutual understanding
+                創造自然的情感和諧與相互理解
               </Text>
             </View>
           </View>
-          
+
           <View style={styles.aspectItem}>
             <View style={styles.aspectSymbolContainer}>
               <Text style={styles.aspectSymbol}>♀ □ ♂</Text>
             </View>
             <View style={styles.aspectContent}>
-              <Text style={styles.aspectName}>Your Venus square Partner's Mars</Text>
+              <Text style={styles.aspectName}>你的金星四分伴侶的火星</Text>
               <Text style={styles.aspectDescription}>
-                Generates passionate attraction with potential for conflict
+                產生強烈的吸引力，但也可能帶來衝突
               </Text>
             </View>
           </View>
-          
+
           <View style={styles.aspectItem}>
             <View style={styles.aspectSymbolContainer}>
               <Text style={styles.aspectSymbol}>☿ ☌ ☿</Text>
             </View>
             <View style={styles.aspectContent}>
-              <Text style={styles.aspectName}>Mercury Conjunction</Text>
+              <Text style={styles.aspectName}>水星合相</Text>
               <Text style={styles.aspectDescription}>
-                Indicates similar thinking patterns and easy communication
+                表示思維模式相似，溝通順暢
               </Text>
             </View>
           </View>
         </Card>
-        
+
         <Card style={styles.adviceCard}>
-          <Text style={styles.adviceTitle}>Relationship Advice</Text>
+          <Text style={styles.adviceTitle}>關係建議</Text>
           <Text style={styles.adviceText}>
-            For this Leo-Scorpio connection to thrive, focus on balancing Leo's need for appreciation with Scorpio's desire for emotional depth. Create space for both open expression and private intimacy. Respect each other's different approaches to loyalty and commitment.
+            要讓這段獅子座-天蠍座的關係蓬勃發展，需要平衡獅子座對讚賞的需求和天蠍座對情感深度的渴望。為開放表達和私密親密都創造空間。尊重彼此對忠誠和承諾的不同理解方式。
           </Text>
           <Button
-            title="Get Detailed Compatibility Report"
+            title="獲取詳細合盤報告"
             onPress={() => {}}
             style={styles.adviceButton}
           />
         </Card>
-        
+
         <View style={styles.otherMatchesContainer}>
-          <Text style={styles.otherMatchesTitle}>Other Matches</Text>
-          
+          <Text style={styles.otherMatchesTitle}>其他配對</Text>
+
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -156,26 +156,26 @@ export default function CompatibilityScreen() {
                 source={{ uri: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' }}
                 style={styles.matchImage}
               />
-              <Text style={styles.matchName}>Sarah</Text>
-              <Text style={styles.matchSign}>Libra</Text>
+              <Text style={styles.matchName}>莎拉</Text>
+              <Text style={styles.matchSign}>天秤座</Text>
               <Text style={styles.matchScore}>82%</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.matchCard}>
               <Image
                 source={{ uri: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80' }}
                 style={styles.matchImage}
               />
-              <Text style={styles.matchName}>Michael</Text>
-              <Text style={styles.matchSign}>Gemini</Text>
+              <Text style={styles.matchName}>小明</Text>
+              <Text style={styles.matchSign}>雙子座</Text>
               <Text style={styles.matchScore}>75%</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={[styles.matchCard, styles.addMatchCard]}>
               <View style={styles.addMatchCircle}>
                 <Plus size={24} color="#BB86FC" />
               </View>
-              <Text style={styles.addMatchText}>Add New</Text>
+              <Text style={styles.addMatchText}>新增配對</Text>
             </TouchableOpacity>
           </ScrollView>
         </View>

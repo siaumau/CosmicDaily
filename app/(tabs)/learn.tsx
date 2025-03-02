@@ -7,95 +7,95 @@ import Button from '../../components/Button';
 
 export default function LearnScreen() {
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   const categories = [
     {
-      title: 'Basics',
+      title: '基礎知識',
       icon: <BookOpen size={24} color="#BB86FC" />,
       items: [
-        { title: 'Zodiac Signs', description: 'Learn about the 12 zodiac signs and their characteristics' },
-        { title: 'Planets', description: 'Understand the role of planets in astrology' },
-        { title: 'Houses', description: 'Discover the 12 houses and their meanings' },
+        { title: '星座符號', description: '了解12星座的特質與含義' },
+        { title: '行星解讀', description: '理解行星在占星學中的角色' },
+        { title: '宮位詮釋', description: '探索12宮位及其意義' },
       ],
     },
     {
-      title: 'Intermediate',
+      title: '進階課程',
       icon: <BookOpen size={24} color="#03DAC6" />,
       items: [
-        { title: 'Aspects', description: 'Learn about planetary relationships and their interpretations' },
-        { title: 'Transits', description: 'Understand how current planetary movements affect you' },
-        { title: 'Progressions', description: 'Discover how your chart evolves over time' },
+        { title: '相位關係', description: '學習行星相位與其解讀方法' },
+        { title: '運行影響', description: '了解當前行星運行對你的影響' },
+        { title: '推運技巧', description: '探索星盤隨時間演變的規律' },
       ],
     },
     {
-      title: 'Advanced',
+      title: '高級研究',
       icon: <BookOpen size={24} color="#CF6679" />,
       items: [
-        { title: 'Asteroids', description: 'Explore the role of asteroids in your chart' },
-        { title: 'Fixed Stars', description: 'Learn about the influence of fixed stars in astrology' },
-        { title: 'Predictive Techniques', description: 'Master advanced prediction methods' },
+        { title: '小行星', description: '探索小行星在星盤中的作用' },
+        { title: '固定星', description: '學習恆星在占星學中的影響' },
+        { title: '預測技術', description: '掌握高級預測方法' },
       ],
     },
   ];
-  
+
   const featuredCourses = [
     {
-      title: 'Astrology Fundamentals',
-      instructor: 'Sarah Johnson',
+      title: '占星學基礎',
+      instructor: '王曉明',
       image: 'https://images.unsplash.com/photo-1518358246973-6d95efb7aa9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
       lessons: 12,
-      duration: '4 hours',
+      duration: '4小時',
     },
     {
-      title: 'Reading Birth Charts',
-      instructor: 'Michael Chen',
+      title: '星盤解讀',
+      instructor: '陳美玲',
       image: 'https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
       lessons: 8,
-      duration: '3 hours',
+      duration: '3小時',
     },
     {
-      title: 'Predictive Astrology',
-      instructor: 'Elena Rodriguez',
+      title: '預測占星',
+      instructor: '李雅婷',
       image: 'https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
       lessons: 10,
-      duration: '5 hours',
+      duration: '5小時',
     },
   ];
-  
+
   return (
     <GradientBackground>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Text style={styles.title}>Learn Astrology</Text>
+          <Text style={styles.title}>學習占星</Text>
         </View>
-        
+
         <View style={styles.searchContainer}>
           <Search size={20} color="rgba(255, 255, 255, 0.5)" style={styles.searchIcon} />
           <TouchableOpacity style={styles.searchInput}>
-            <Text style={styles.searchPlaceholder}>Search topics, terms, or questions...</Text>
+            <Text style={styles.searchPlaceholder}>搜尋主題、術語或問題...</Text>
           </TouchableOpacity>
         </View>
-        
+
         <View style={styles.categoriesContainer}>
           <TouchableOpacity style={[styles.categoryTab, styles.activeCategoryTab]}>
             <BookOpen size={20} color="#BB86FC" />
-            <Text style={styles.activeCategoryText}>Articles</Text>
+            <Text style={styles.activeCategoryText}>文章</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity style={styles.categoryTab}>
             <Video size={20} color="rgba(255, 255, 255, 0.7)" />
-            <Text style={styles.categoryText}>Videos</Text>
+            <Text style={styles.categoryText}>影片</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity style={styles.categoryTab}>
             <MessageCircle size={20} color="rgba(255, 255, 255, 0.7)" />
-            <Text style={styles.categoryText}>Ask AI</Text>
+            <Text style={styles.categoryText}>AI問答</Text>
           </TouchableOpacity>
         </View>
-        
+
         <View style={styles.featuredContainer}>
-          <Text style={styles.sectionTitle}>Featured Courses</Text>
-          
+          <Text style={styles.sectionTitle}>精選課程</Text>
+
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -106,9 +106,9 @@ export default function LearnScreen() {
                 <Image source={{ uri: course.image }} style={styles.courseImage} />
                 <View style={styles.courseContent}>
                   <Text style={styles.courseTitle}>{course.title}</Text>
-                  <Text style={styles.courseInstructor}>By {course.instructor}</Text>
+                  <Text style={styles.courseInstructor}>講師：{course.instructor}</Text>
                   <View style={styles.courseDetails}>
-                    <Text style={styles.courseInfo}>{course.lessons} lessons</Text>
+                    <Text style={styles.courseInfo}>{course.lessons}課</Text>
                     <Text style={styles.courseInfo}>{course.duration}</Text>
                   </View>
                 </View>
@@ -116,14 +116,14 @@ export default function LearnScreen() {
             ))}
           </ScrollView>
         </View>
-        
+
         {categories.map((category, categoryIndex) => (
           <View key={categoryIndex} style={styles.categorySection}>
             <View style={styles.categoryHeader}>
               {category.icon}
               <Text style={styles.categoryTitle}>{category.title}</Text>
             </View>
-            
+
             {category.items.map((item, itemIndex) => (
               <Card key={itemIndex} style={styles.topicCard} onPress={() => {}}>
                 <View style={styles.topicContent}>
@@ -135,36 +135,36 @@ export default function LearnScreen() {
             ))}
           </View>
         ))}
-        
+
         <Card style={styles.aiCard} gradient>
           <View style={styles.aiHeader}>
             <View style={styles.aiIconContainer}>
               <MessageCircle size={24} color="#fff" />
             </View>
             <View style={styles.aiContent}>
-              <Text style={styles.aiTitle}>Ask the Astrology AI</Text>
+              <Text style={styles.aiTitle}>諮詢占星AI</Text>
               <Text style={styles.aiDescription}>
-                Get personalized answers to your astrology questions
+                獲得針對你占星問題的個人化解答
               </Text>
             </View>
           </View>
-          
+
           <View style={styles.aiExamples}>
             <TouchableOpacity style={styles.aiExampleButton}>
-              <Text style={styles.aiExampleText}>What does my Venus in Scorpio mean?</Text>
+              <Text style={styles.aiExampleText}>我的金星在天蠍座代表什麼？</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.aiExampleButton}>
-              <Text style={styles.aiExampleText}>How does Saturn return affect me?</Text>
+              <Text style={styles.aiExampleText}>土星回歸如何影響我？</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.aiExampleButton}>
-              <Text style={styles.aiExampleText}>Explain retrograde planets</Text>
+              <Text style={styles.aiExampleText}>解釋行星逆行的意義</Text>
             </TouchableOpacity>
           </View>
-          
+
           <Button
-            title="Start Conversation"
+            title="開始對話"
             onPress={() => {}}
             variant="secondary"
             style={styles.aiButton}

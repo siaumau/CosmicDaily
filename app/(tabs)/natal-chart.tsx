@@ -8,7 +8,7 @@ import Button from '../../components/Button';
 
 export default function NatalChartScreen() {
   const [activeTab, setActiveTab] = useState('planets');
-  
+
   const renderTabContent = () => {
     switch (activeTab) {
       case 'planets':
@@ -21,12 +21,12 @@ export default function NatalChartScreen() {
         return <PlanetsTab />;
     }
   };
-  
+
   return (
     <GradientBackground>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Text style={styles.title}>Birth Chart</Text>
+          <Text style={styles.title}>本命星盤</Text>
           <View style={styles.headerButtons}>
             <TouchableOpacity style={styles.iconButton}>
               <Info size={20} color="#BB86FC" />
@@ -39,19 +39,19 @@ export default function NatalChartScreen() {
             </TouchableOpacity>
           </View>
         </View>
-        
+
         <View style={styles.chartSelector}>
           <TouchableOpacity style={styles.chartSelectorButton}>
-            <Text style={styles.chartSelectorText}>My Chart</Text>
-            <Text style={styles.chartSelectorDate}>May 15, 1990 • 8:30 PM</Text>
+            <Text style={styles.chartSelectorText}>我的星盤</Text>
+            <Text style={styles.chartSelectorDate}>1990年5月15日 • 晚上8:30</Text>
             <ChevronDown size={16} color="#BB86FC" />
           </TouchableOpacity>
         </View>
-        
+
         <View style={styles.chartContainer}>
           <AstrologyChart />
         </View>
-        
+
         <View style={styles.tabsContainer}>
           <TouchableOpacity
             style={[styles.tab, activeTab === 'planets' && styles.activeTab]}
@@ -63,7 +63,7 @@ export default function NatalChartScreen() {
                 activeTab === 'planets' && styles.activeTabText,
               ]}
             >
-              Planets
+              行星
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -76,7 +76,7 @@ export default function NatalChartScreen() {
                 activeTab === 'houses' && styles.activeTabText,
               ]}
             >
-              Houses
+              宮位
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -89,20 +89,20 @@ export default function NatalChartScreen() {
                 activeTab === 'aspects' && styles.activeTabText,
               ]}
             >
-              Aspects
+              相位
             </Text>
           </TouchableOpacity>
         </View>
-        
+
         {renderTabContent()}
-        
+
         <Card style={styles.premiumCard} gradient>
-          <Text style={styles.premiumTitle}>Get Professional Analysis</Text>
+          <Text style={styles.premiumTitle}>獲取專業分析</Text>
           <Text style={styles.premiumDescription}>
-            Unlock detailed interpretations of your birth chart from professional astrologers.
+            解鎖來自專業占星師的詳細本命星盤解讀。
           </Text>
           <Button
-            title="Upgrade to Premium"
+            title="升級至高級版"
             onPress={() => {}}
             style={styles.premiumButton}
           />
@@ -115,52 +115,52 @@ export default function NatalChartScreen() {
 function PlanetsTab() {
   const planets = [
     {
-      name: 'Sun',
+      name: '太陽',
       symbol: '☉',
-      sign: 'Leo',
+      sign: '獅子座',
       degree: '23°',
-      house: '10th House',
+      house: '第十宮',
       description:
-        'Your Sun in Leo gives you a confident, creative, and generous personality. You naturally seek to express yourself and shine in your career.',
+        '你的太陽在獅子座賦予你自信、創造力和慷慨的個性。你天生就想要表達自己並在事業中發光發熱。',
     },
     {
-      name: 'Moon',
+      name: '月亮',
       symbol: '☽',
-      sign: 'Pisces',
+      sign: '雙魚座',
       degree: '15°',
-      house: '4th House',
+      house: '第四宮',
       description:
-        'Your Moon in Pisces creates an emotionally sensitive, intuitive, and compassionate nature. You have a rich inner world and deep connection to home and family.',
+        '你的月亮在雙魚座使你具有情感敏感、直覺和同理心的特質。你擁有豐富的內心世界，並與家庭有深厚的連結。',
     },
     {
-      name: 'Mercury',
+      name: '水星',
       symbol: '☿',
-      sign: 'Virgo',
+      sign: '處女座',
       degree: '8°',
-      house: '11th House',
+      house: '第十一宮',
       description:
-        'Your Mercury in Virgo gives you a precise, analytical, and detail-oriented mind. You communicate effectively in group settings and organizations.',
+        '你的水星在處女座給予你精確、分析和注重細節的思維。你在群體環境中能有效溝通。',
     },
     {
-      name: 'Venus',
+      name: '金星',
       symbol: '♀',
-      sign: 'Libra',
+      sign: '天秤座',
       degree: '2°',
-      house: '12th House',
+      house: '第十二宮',
       description:
-        'Your Venus in Libra brings harmony, diplomacy, and aesthetic appreciation to your relationships. You may have hidden romantic tendencies or spiritual connections.',
+        '你的金星在天秤座為你的關係帶來和諧、外交手腕和審美鑑賞力。你可能有隱藏的浪漫傾向或精神連結。',
     },
     {
-      name: 'Mars',
+      name: '火星',
       symbol: '♂',
-      sign: 'Aries',
+      sign: '白羊座',
       degree: '19°',
-      house: '5th House',
+      house: '第五宮',
       description:
-        'Your Mars in Aries provides strong initiative, courage, and competitive drive. You express this energy through creative pursuits and romantic endeavors.',
+        '你的火星在白羊座提供強大的主動性、勇氣和競爭動力。你通過創造性追求和浪漫冒險表達這種能量。',
     },
   ];
-  
+
   return (
     <View style={styles.tabContent}>
       {planets.map((planet, index) => (
@@ -187,34 +187,34 @@ function HousesTab() {
   const houses = [
     {
       number: 1,
-      name: 'First House',
-      sign: 'Virgo',
+      name: '第一宮',
+      sign: '處女座',
       description:
-        'Your Ascendant in Virgo gives you an analytical, practical, and detail-oriented approach to life. You appear organized, helpful, and modest to others.',
+        '你的上升點在處女座賦予你分析、實際和注重細節的生活態度。在他人眼中，你顯得有條理、樂於助人且謙遜。',
     },
     {
       number: 4,
-      name: 'Fourth House',
-      sign: 'Sagittarius',
+      name: '第四宮',
+      sign: '射手座',
       description:
-        'With Sagittarius on your 4th house cusp, your home and family life is characterized by expansion, optimism, and a love of freedom. You may have a multicultural background or love to travel.',
+        '射手座在第四宮使你的家庭和私人生活充滿擴張、樂觀和自由的特質。你可能有多元文化背景或熱愛旅行。',
     },
     {
       number: 7,
-      name: 'Seventh House',
-      sign: 'Pisces',
+      name: '第七宮',
+      sign: '雙魚座',
       description:
-        'Pisces on your 7th house cusp indicates partnerships that are compassionate, intuitive, and sometimes idealistic. You seek spiritual or emotional connection in relationships.',
+        '雙魚座在第七宮顯示你的伴侶關係富有同情心、直覺和理想主義。你在關係中尋求精神或情感上的連結。',
     },
     {
       number: 10,
-      name: 'Tenth House',
-      sign: 'Gemini',
+      name: '第十宮',
+      sign: '雙子座',
       description:
-        'With Gemini on your 10th house cusp, your career path may involve communication, versatility, and intellectual pursuits. You may have multiple career paths or change directions.',
+        '雙子座在第十宮表明你的職業道路可能涉及溝通、多樣性和智力追求。你可能會有多重職業或改變方向。',
     },
   ];
-  
+
   return (
     <View style={styles.tabContent}>
       {houses.map((house, index) => (
@@ -238,31 +238,31 @@ function HousesTab() {
 function AspectsTab() {
   const aspects = [
     {
-      planets: 'Sun trine Moon',
-      type: 'Trine (120°)',
+      planets: '太陽三分月亮',
+      type: '三分相位 (120°)',
       description:
-        'This harmonious aspect between your core identity and emotional nature creates inner harmony and emotional balance. Your conscious goals and unconscious needs work together.',
+        '這個和諧的相位在你的核心身份和情感本質之間創造內在和諧與情感平衡。你的意識目標和潛意識需求能夠協同工作。',
     },
     {
-      planets: 'Mercury square Mars',
-      type: 'Square (90°)',
+      planets: '水星四分火星',
+      type: '四分相位 (90°)',
       description:
-        'This challenging aspect can create tension between your thinking and your actions. You may be quick to argue or debate, but this energy can also fuel intellectual courage.',
+        '這個具有挑戰性的相位可能在你的思維和行動之間造成緊張。你可能容易爭論或辯論，但這種能量也可以激發智力勇氣。',
     },
     {
-      planets: 'Venus conjunct Jupiter',
-      type: 'Conjunction (0°)',
+      planets: '金星合木星',
+      type: '合相位 (0°)',
       description:
-        'This beneficial aspect amplifies your capacity for love, beauty, and abundance. You have natural charm, generosity, and optimism in relationships and finances.',
+        '這個有利的相位增強你對愛、美和豐盛的能力。你天生具有魅力、慷慨和樂觀的特質，特別是在關係和財務方面。',
     },
     {
-      planets: 'Mars opposition Saturn',
-      type: 'Opposition (180°)',
+      planets: '火星對沖土星',
+      type: '對沖相位 (180°)',
       description:
-        'This challenging aspect creates tension between your drive for action and your sense of limitation. Learning to balance assertiveness with patience is your key growth area.',
+        '這個具有挑戰性的相位在你的行動衝動和限制感之間產生緊張。學會平衡果斷和耐心是你的主要成長領域。',
     },
   ];
-  
+
   return (
     <View style={styles.tabContent}>
       {aspects.map((aspect, index) => (
